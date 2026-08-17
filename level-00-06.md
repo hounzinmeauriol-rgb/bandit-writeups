@@ -1,62 +1,64 @@
-# Niveaux 0 à 6
+# Level 0 bis 6
 
-> Aucun mot de passe n'est publié ici, conformément aux règles d'OverTheWire. Ce document liste les commandes et concepts pratiqués pour progresser dans ces niveaux.
+Zusammenfassung der Linux-Befehle und Konzepte, die ich beim Durchspielen von Level 0 bis 6 im [Bandit](https://overthewire.org/wargames/bandit/)-Wargame (OverTheWire) gelernt und geübt habe.
 
-## Connexion SSH
+*(Hinweis: Aus den Regeln von OverTheWire folgt, dass hier keine Level-Passwörter veröffentlicht werden.)*
 
-```
-ssh UTILISATEUR@bandit.labs.overthewire.org -p 2220
-```
-
-Connexion au serveur Bandit avec le port dédié 2220.
-
-## Navigation et exploration
+## SSH-Verbindung
 
 ```
-ls          # lister les fichiers visibles
-ls -a       # inclure les fichiers cachés
-ls -la      # détails + fichiers cachés (permissions, propriétaire, taille...)
-cd DOSSIER  # entrer dans un répertoire
-cd ..       # revenir au répertoire parent
-cat FICHIER # afficher le contenu d'un fichier
+ssh BENUTZER@bandit.labs.overthewire.org -p 2220
 ```
 
-## Cas particuliers de noms de fichiers
+Verbindung zum Bandit-Server über den dedizierten Port 2220.
+
+## Navigation und Erkundung
 
 ```
-cat ./-file07                      # fichier commençant par un tiret
-cat "./--spaces in this filename--" # fichier avec espaces
+ls          # sichtbare Dateien auflisten
+ls -a       # versteckte Dateien einschließen
+ls -la      # Details + versteckte Dateien (Rechte, Eigentümer, Größe...)
+cd ORDNER   # in ein Verzeichnis wechseln
+cd ..       # zurück ins übergeordnete Verzeichnis
+cat DATEI   # Inhalt einer Datei anzeigen
 ```
 
-`./` permet de forcer l'interprétation du nom comme chemin plutôt que comme option de commande.
-
-## Permissions Unix
-
-Format `-rw-r-----` : type de fichier, puis droits du propriétaire / groupe / autres (lecture, écriture, exécution).
-
-## Identification de fichiers
+## Sonderfälle bei Dateinamen
 
 ```
-file NOM_DU_FICHIER   # déterminer le type réel du contenu
-file ./*               # analyser tous les fichiers du répertoire actuel
+cat ./-file07                       # Datei, deren Name mit einem Bindestrich beginnt
+cat "./--spaces in this filename--" # Datei mit Leerzeichen im Namen
 ```
 
-## Recherche avancée avec find
+`./` erzwingt, dass der Name als Pfad interpretiert wird und nicht als Befehlsoption.
+
+## Unix-Rechte
+
+Format `-rw-r-----`: Dateityp, gefolgt von den Rechten für Eigentümer / Gruppe / Andere (Lesen, Schreiben, Ausführen).
+
+## Dateien identifizieren
 
 ```
-find . -type f                              # tous les fichiers ordinaires
-find . -type d                              # tous les répertoires
-find . -type f -size 1033c ! -executable    # taille exacte, non exécutable
-find . -type f -size 1033c -executable      # taille exacte, exécutable
+file DATEINAME   # den tatsächlichen Inhaltstyp bestimmen
+file ./*          # alle sichtbaren Dateien im aktuellen Verzeichnis analysieren
 ```
 
-## Conversion bits / bytes
+## Erweiterte Suche mit find
 
-1 byte = 1 octet = 8 bits. Utile quand une consigne donne une taille en bits et que `find -size` attend des octets (`c`).
+```
+find . -type f                              # alle regulären Dateien
+find . -type d                              # alle Verzeichnisse
+find . -type f -size 1033c ! -executable    # exakte Größe, nicht ausführbar
+find . -type f -size 1033c -executable      # exakte Größe, ausführbar
+```
 
-## Méthode de progression
+## Umrechnung Bit / Byte
 
-1. Lire la consigne du niveau.
-2. Identifier la ou les commandes pertinentes.
-3. Exécuter et localiser l'information demandée.
-4. Se connecter au niveau suivant via SSH.
+1 Byte = 1 Octet = 8 Bit. Nützlich, wenn eine Aufgabe eine Größe in Bit angibt, `find -size` aber Bytes erwartet (`c`).
+
+## Vorgehensweise
+
+1. Aufgabenstellung des Levels lesen.
+2. Passende Befehle identifizieren.
+3. Ausführen und gesuchte Information finden.
+4. Über SSH mit dem nächsten Level verbinden.
