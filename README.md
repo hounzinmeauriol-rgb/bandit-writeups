@@ -1,27 +1,27 @@
 # Bandit Writeups — OverTheWire
 
-Résumés personnels de ma progression dans le wargame [OverTheWire Bandit](https://overthewire.org/wargames/bandit/), rédigés au fur et à mesure de mon apprentissage autonome de Linux et de la sécurité de base.
+Persönliche Zusammenfassungen meines Fortschritts im [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) Wargame, geschrieben im Zuge meines eigenständigen Lernens von Linux und Grundlagen der IT-Sicherheit.
 
-**Objectif :** documenter les commandes, concepts et réflexes acquis à chaque niveau — pas de mots de passe publiés (contraire aux règles du wargame).
+**Ziel:** Befehle, Konzepte und Vorgehensweisen jedes Levels dokumentieren — keine veröffentlichten Passwörter (widerspricht den Regeln des Wargames).
 
-## Compétences couvertes jusqu'ici
+## Bisher behandelte Fähigkeiten
 
-- Connexion à distance (SSH)
-- Navigation dans le système de fichiers (`ls`, `cd`, `cat`)
-- Permissions Unix (lecture/écriture/exécution, propriétaire/groupe/autres)
-- Gestion des noms de fichiers particuliers (tirets, espaces, fichiers cachés)
-- Recherche avancée avec `find` (type, taille, permissions, exécutabilité)
-- Identification de type de fichier avec `file`
-- Conversion bits/bytes
+- Remote-Verbindung (SSH)
+- Navigation im Dateisystem (`ls`, `cd`, `cat`)
+- Unix-Rechte (Lesen/Schreiben/Ausführen, Eigentümer/Gruppe/Andere)
+- Umgang mit besonderen Dateinamen (Bindestriche, Leerzeichen, versteckte Dateien)
+- Erweiterte Suche mit `find` (Typ, Größe, Rechte, Ausführbarkeit)
+- Dateitypbestimmung mit `file`
+- Umrechnung Bit/Byte
 
-## Niveaux
+## Level
 
-| Niveau | Résumé |
-|--------|--------|
-| 0 → 6  | [level-00-06.md](levels/level-00-06.md) |
+| Level  | Zusammenfassung |
+|--------|------------------|
+| 0 → 6  | [level-00-06.md](level-00-06.md) |
 
-*(mis à jour au fur et à mesure de la progression)*
+*(wird laufend aktualisiert)*
 
-## À propos
+## Über mich
 
-Je suis en Computer Engineering (Bachelor) à la HTW Berlin. Ce dépôt fait partie de ma préparation pour une alternance en informatique — je documente ici mon apprentissage pratique de Linux et de la sécurité en dehors des cours.
+Ich studiere Computer Engineering (Bachelor) an der HTW Berlin. Dieses Repository ist Teil meiner Vorbereitung auf eine Werkstudentenstelle im IT-Bereich — hier dokumentiere ich mein praktisches Lernen von Linux und IT-Sicherheit außerhalb der Vorlesungen.
